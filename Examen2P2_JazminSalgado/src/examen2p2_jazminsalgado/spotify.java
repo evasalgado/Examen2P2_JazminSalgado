@@ -8,7 +8,10 @@ import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -42,6 +45,12 @@ public class spotify extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        artist_menu = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        client_menu = new javax.swing.JPopupMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -67,6 +76,21 @@ public class spotify extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+
+        jMenuItem1.setText("jMenuItem1");
+        artist_menu.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        artist_menu.add(jMenuItem2);
+
+        jMenuItem3.setText("jMenuItem3");
+        client_menu.add(jMenuItem3);
+
+        jMenuItem4.setText("jMenuItem4");
+        client_menu.add(jMenuItem4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -140,6 +164,11 @@ public class spotify extends javax.swing.JFrame {
         });
 
         age.setText("Age");
+        age.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ageMousePressed(evt);
+            }
+        });
 
         jButton4.setText("Sign UP");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -292,25 +321,71 @@ public class spotify extends javax.swing.JFrame {
 
         jButton3.setText("PlayList");
 
+        jPanel7.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel7MouseExited(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("X");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addGap(17, 17, 17))
+        );
+
+        jButton5.setText("Add ");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jButton3)
+                        .addComponent(jButton5))
                     .addComponent(jButton2))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -357,39 +432,42 @@ public class spotify extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        File f = new File("./users");
+       u = new usuario(user.getText(), pswrd.getText(), Integer.parseInt(age.getText()));
+       usuarios.add(u);
         FileWriter fw = null;
         BufferedWriter bw = null;
-
+        
+        
         try {
-            fw = new FileWriter(f);
+            File f = new File("./users.txt");
+            fw = new FileWriter(f, true);
             bw = new BufferedWriter(fw);
 
+            bw.write(usuarios.toString());
+            bw.newLine();
+            JOptionPane.showMessageDialog(this, "usuario añadido correctamente");
             if (jRadioButton1.isSelected()) {
                 if (Integer.parseInt(age.getText()) <= 12) {
                     JOptionPane.showMessageDialog(this, "Usuario no puede volverse artista aun");
                     art_name.setEditable(false);
                 } else {
                     art_name.setEditable(true);
-                    u = new usuario(user.getText(), pswrd.getPassword().toString(), Integer.parseInt(age.getText()));
-                    usuarios.add(u);
-                    bw.write("artista:" + usuarios.toString());
-                    bw.newLine();
-                    JOptionPane.showMessageDialog(this, "usuario añadido correctamente");
+
                 }
             } else if (jRadioButton2.isSelected()) {
                 art_name.setEditable(false);
-                u = new usuario(user.getText(), pswrd.getPassword().toString(), Integer.parseInt(age.getText()));
-                usuarios.add(u);
-                bw.write("cliente:" + usuarios.toString());
-                bw.newLine();
-                JOptionPane.showMessageDialog(this, "usuario añadido correctamente");
+
+
             }
+            
+            jPanel2.setVisible(false);
+            jPanel1.setVisible(true);
             bw.close();
             fw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            Logger.getLogger(spotify.class.getName()).log(Level.SEVERE, null, e);
         }
+        
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
@@ -413,7 +491,7 @@ public class spotify extends javax.swing.JFrame {
             user_c.setText("");
             pswrd_c.setText("******");
         }
-        if (String.valueOf(pswrd_c.getPassword()).equals("******")) {
+        if (String.valueOf(pswrd_c.getPassword()).isEmpty()) {
             user_c.setText("username");
             user_c.setForeground(Color.GRAY);
         }
@@ -424,33 +502,56 @@ public class spotify extends javax.swing.JFrame {
             pswrd_c.setText("");
             user_c.setText("username");
         }
-        if (String.valueOf(pswrd_c.getPassword()).equals("username")) {
+        if (user_c.getText().isEmpty()) {
             pswrd_c.setText("******");
             pswrd_c.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_pswrd_cMousePressed
 
-    private void userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMousePressed
-        if (user_c.getText().equals("username")) {
-            user_c.setText("");
-            pswrd_c.setText("******");
+    private void pswrdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pswrdMousePressed
+        if (String.valueOf(pswrd.getPassword()).equals("******")) {
+            pswrd.setText("");
+            user.setText("username");
         }
-        if (String.valueOf(pswrd_c.getPassword()).equals("******")) {
-            user_c.setText("username");
-            user_c.setForeground(Color.GRAY);
+        if (user.getText().isEmpty()) {
+            pswrd.setText("******");
+            pswrd.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_pswrdMousePressed
+
+    private void userMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMousePressed
+        if (user.getText().equals("username")) {
+            user.setText("");
+            user.setForeground(Color.black);
+        }
+        if (String.valueOf(pswrd.getPassword()).isEmpty()) {
+            pswrd.setText("******");
+            pswrd.setForeground(Color.gray);
         }
     }//GEN-LAST:event_userMousePressed
 
-    private void pswrdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pswrdMousePressed
-        if (String.valueOf(pswrd_c.getPassword()).equals("******")) {
-            pswrd_c.setText("");
-            user_c.setText("username");
+    private void jPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseEntered
+        jPanel7.setBackground(Color.red);
+    }//GEN-LAST:event_jPanel7MouseEntered
+
+    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
+        jPanel7.setBackground(Color.red);
+    }//GEN-LAST:event_jPanel7MouseExited
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        if(jRadioButton1.isSelected()){
+            artist_menu.show(evt.getComponent(), evt.getX(), evt.getY());
+        } else {
+           client_menu.show(evt.getComponent(), evt.getX(), evt.getY());
         }
-        if (String.valueOf(pswrd_c.getPassword()).equals("username")) {
-            pswrd_c.setText("******");
-            pswrd_c.setForeground(Color.GRAY);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void ageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ageMousePressed
+        if (age.getText().equals("Age")) {
+            user.setText("");
+            user.setForeground(Color.black);
         }
-    }//GEN-LAST:event_pswrdMousePressed
+    }//GEN-LAST:event_ageMousePressed
 
     /**
      * @param args the command line arguments
@@ -490,20 +591,29 @@ public class spotify extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age;
     private javax.swing.JTextField art_name;
+    private javax.swing.JPopupMenu artist_menu;
+    private javax.swing.JPopupMenu client_menu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
