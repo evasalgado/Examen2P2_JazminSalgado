@@ -4,6 +4,8 @@
  */
 package examen2p2_jazminsalgado;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author evaja
@@ -45,7 +47,12 @@ public class usuario {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
+    
+    public void isEdad(int Edad){
+        if (edad<=12) {
+            JOptionPane.showMessageDialog(null, "Edad muy temprana para crear cuenta");
+        } 
+    }
     @Override
     public String toString() {
         return "usuario{" + "username=" + username + ", password=" + password + ", edad=" + edad + '}';
