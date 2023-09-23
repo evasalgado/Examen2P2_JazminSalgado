@@ -1,2 +1,2 @@
 [username=ijustnoexist, password=holamundo, edad=18]
-Artista[username=killerbean14, password=1234, edad=45]
+Artista[username=killerbean14, password=1234, edad=45]Artista[username=ijustnoexist, password=[C@2e4b7f6c, edad=23]Cliente[]Cliente: [username=holamiamigo, password=[C@3b8bbda7, edad=23]Cliente: [username=holaatodos, password=[C@3df64eb, edad=23]Cliente: [username=sasasasaa, password=[C@1aa38a08, edad=34]Cliente: [username=nose, password=[C@c23ab83, edad=23]Cliente: [username=holaamigo, password=[C@7a8d69b2, edad=23][username=sad, password=[C@61114377, edad=18][username=usuario, password=[C@60ea70f1, edad=23]
