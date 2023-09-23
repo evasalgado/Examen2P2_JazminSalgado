@@ -62,6 +62,7 @@ public class spotify extends javax.swing.JFrame {
         add_release = new javax.swing.JMenu();
         add_album = new javax.swing.JMenuItem();
         add_single = new javax.swing.JMenuItem();
+        add_song = new javax.swing.JMenuItem();
         client_menu = new javax.swing.JPopupMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -105,8 +106,14 @@ public class spotify extends javax.swing.JFrame {
         al_name1 = new javax.swing.JTextField();
         al_date1 = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
+        jPanel19 = new javax.swing.JPanel();
 
         mod_release.setText("Modificar lanzamiento");
+        mod_release.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mod_releaseActionPerformed(evt);
+            }
+        });
         artist_menu.add(mod_release);
 
         del_release.setText("Eliminar lanzamiento");
@@ -124,6 +131,9 @@ public class spotify extends javax.swing.JFrame {
             }
         });
         add_release.add(add_single);
+
+        add_song.setText("agregar cancion");
+        add_release.add(add_song);
 
         artist_menu.add(add_release);
 
@@ -584,6 +594,21 @@ public class spotify extends javax.swing.JFrame {
 
         getContentPane().add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jPanel19.setBackground(new java.awt.Color(0, 204, 102));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 781, Short.MAX_VALUE)
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -777,6 +802,10 @@ public class spotify extends javax.swing.JFrame {
         jPanel18.setVisible(true);
     }//GEN-LAST:event_add_singleMouseClicked
 
+    private void mod_releaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod_releaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mod_releaseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -816,6 +845,7 @@ public class spotify extends javax.swing.JFrame {
     private javax.swing.JMenuItem add_album;
     private javax.swing.JMenu add_release;
     private javax.swing.JMenuItem add_single;
+    private javax.swing.JMenuItem add_song;
     private javax.swing.JTextField age;
     private javax.swing.JTextField al_date;
     private javax.swing.JTextField al_date1;
@@ -865,6 +895,7 @@ public class spotify extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
